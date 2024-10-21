@@ -1,0 +1,294 @@
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f7f7f7;
+    background-image: url(https://raisingaigen.com/wp-content/uploads/2024/02/Track-daily-expenses-with-AI.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+   
+  }
+  
+  h1 {
+    color: whitesmoke; /* Dark color for better contrast against light background */
+  }
+  
+  .container {
+      margin: 30px auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.8); /* Transparent background color */
+      max-width: 90%;
+      width: 350px;
+  }
+  
+  h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+  }
+  
+  .inc-exp-container {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+    width: 50%;
+    background-color: #bfdff0;
+  }
+  
+  .inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+  }
+  
+  .money-plus {
+    color: #2ecc71;
+  }
+  
+  .money-minus {
+    color: #c0392b;
+  }
+  
+  .form-control {
+    margin: 20px 0;
+  }
+  
+  .form-control select,
+  .form-control input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    background-color: #8ed2f7;
+  }
+  
+  .btn {
+    cursor: pointer;
+    background-color: blue;
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 150px; /* Limit height */
+    overflow-y: auto; /* Scrollable if too many items */
+    width: 100%;
+
+  }
+  
+  .list li {
+    background-color: #55e4ec;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .list li.plus {
+    border-right: 5px solid #2ecc71;
+  }
+  
+  .list li.minus {
+    border-right: 5px solid #c0392b;
+  }
+  
+  .delete-btn {
+    cursor: pointer;
+    color: red ;
+    border: 0;
+    padding: 5px;
+    margin-left: 10px;
+    transition: opacity 0.3s;
+    opacity: 0.7;
+    font-size: 12px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgCtB72sd2csn3h4Xoktuuub7vFQQ-dGBOw&s');
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    }
+  
+  
+  
+  .list li:hover .delete-btn,
+  .list li:hover .edit-btn {
+    opacity: 1;
+  }
+.container {
+    max-width: 90%;
+    width: 350px;
+    
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 500px;
+    }
+}
+.edit-btn {
+    padding: 5px 10px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px; /* Add margin to separate from delete button */
+    margin-right: 10px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1263/1263925.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+
+}
+.list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items in the center vertically */
+}
+
+.list li .date {
+    flex: 1;
+    text-align: left; /* Align date to the left */
+    margin-right: 1rem; /* Add margin to separate date from description */
+
+}
+
+.list li .actions {
+    display: flex;
+    align-items: center;
+}
+
+.list li .actions .edit-btn,
+.list li .actions .delete-btn {
+    margin-left: 10px; /* Add margin to separate buttons */
+    margin-right: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        color: #000; /* Change text color for smaller screens */
+    }
+
+    .container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .inc-exp-container {
+        flex-direction: column;
+    }
+
+    .inc-exp-container > div {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .inc-exp-container > div:first-of-type {
+        border-right: none;
+        border-bottom: 1px solid #dedede;
+    }
+
+    .form-control select,
+    .form-control input {
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list li .actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .list li .actions .edit-btn,
+    .list li .actions .delete-btn {
+        margin-left: 5px;
+        margin-right: 0;
+    }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .inc-exp-container {
+    flex-direction: column;
+  }
+
+  .inc-exp-container > div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .inc-exp-container > div:first-of-type {
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+  }
+
+  .form-control select,
+  .form-control input {
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list li .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .list li .actions .edit-btn,
+  .list li .actions .delete-btn {
+    margin-left: 5px;
+    margin-right: 0;
+  }
+}
